@@ -1,0 +1,9 @@
+.Row{  
+  background-color: grey;
+  text-align: center;
+  border-right: solid black;
+  border-bottom: solid black;
+  border-width: 1 1px;
+  height: 650px;
+  width: 100%;
+}
