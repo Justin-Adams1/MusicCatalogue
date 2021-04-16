@@ -44,9 +44,7 @@ class App extends React.Component{
           </Row>
           <Row>
             <Col sm={8}>
-
               <CenterBody />
-            
             </Col>
             <Col sm={4}>
               <RightBody />

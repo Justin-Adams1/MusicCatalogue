@@ -18,7 +18,9 @@ class CenterBody extends React.Component{
                     <Col>
                         <ListGroup>
                             <ListGroup.Item>
-                               
+                            {this.state.result.data.keys(this.state.result.data.id).map((track, index) => (
+                                <p key={track.id}>{track.artist}, {track.album}, {track.title}, {track.releaseDate}, {track.genre}</p>
+                             ))}
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
