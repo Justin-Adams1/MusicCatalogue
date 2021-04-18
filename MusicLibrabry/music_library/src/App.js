@@ -21,8 +21,13 @@ class App extends React.Component{
   async apiCall(){
     try{
       const result = await axios.get("http://www.devcodecampmusiclibrary.com/api/music/");
-      console.log(result.data);
-      this.setState({result});
+      
+      //result = result.map.keys(result.data);
+      const data = result.data;
+      console.log(data);
+      //console.log.(data[0]);
+      this.setState({data});
+      console.log(this.state.data[0]);
     }
     catch(error){
       console.log(error);
