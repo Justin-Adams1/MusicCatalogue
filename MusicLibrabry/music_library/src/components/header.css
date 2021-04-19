@@ -4,9 +4,12 @@ h1 {
     color: white;
 }
 h3 {
-    padding: 5px;
+    padding: auto;
     background-color: black;
     color: white;
+}
+h4 {
+    
 }
 .Col {
     padding: 5px;
