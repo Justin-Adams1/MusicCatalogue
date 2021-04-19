@@ -1,7 +1,10 @@
-.header {
+.rightBody {
     background-color: black;
     width: fit-content;
     color: white;
     padding: 5px;
     border-radius:  35px;
+}
+.form{
+    text-align:left;
 }

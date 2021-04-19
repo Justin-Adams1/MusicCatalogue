@@ -1,9 +1,10 @@
-.Row{  
+.mainPage{  
   background-color: grey;
+  width:fit-content;
+  height:fit-content;
   text-align: center;
-  border-right: solid black;
-  border-bottom: solid black;
-  border-width: 1 1px;
+  border-width: 1px;
   height: 650px;
   width: 100%;
+  padding-top: 5px;
 }
