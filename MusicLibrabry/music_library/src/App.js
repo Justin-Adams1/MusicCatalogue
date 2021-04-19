@@ -14,20 +14,17 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      result: [],
+      data: [],
     };
   }
  
   async apiCall(){
     try{
       const result = await axios.get("http://www.devcodecampmusiclibrary.com/api/music/");
-      
-      //result = result.map.keys(result.data);
       const data = result.data;
-      console.log(data);
-      //console.log.(data[0]);
+      
       this.setState({data});
-      console.log(this.state.data[0]);
+
     }
     catch(error){
       console.log(error);
@@ -35,7 +32,7 @@ class App extends React.Component{
   }
 
   componentDidMount(){
-    this.apiCall();
+    this.apiCall()
   }
 
   render(){
@@ -49,7 +46,7 @@ class App extends React.Component{
           </Row>
           <Row>
             <Col sm={8}>
-              <CenterBody />
+              <CenterBody data = {this.state.data} />
             </Col>
             <Col sm={4}>
               <RightBody />

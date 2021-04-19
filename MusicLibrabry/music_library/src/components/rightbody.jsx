@@ -11,7 +11,9 @@ function RightBody(props){
         <div>
             <Container fluid>
                 <Row>
-                    <Col>Right Body</Col>
+                    <Col>
+                        <h3>Choices</h3>
+                    </Col>
                 </Row>
             </Container>
         </div>

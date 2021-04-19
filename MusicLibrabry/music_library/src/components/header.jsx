@@ -5,13 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import './Header.css';
+    
 
 function Header(props){
 return (
     <div>
         <Container fluid>
             <Row>
-                <Col>Header
+                <Col>
+                    <h1>Music Catalogue Listing</h1>
                 </Col>
             </Row>
         </Container>

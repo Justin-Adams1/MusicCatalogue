@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Button from 'react-bootstrap/Button';
@@ -8,24 +8,32 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Container from 'react-bootstrap/Container';
 
  
-class CenterBody extends React.Component{
-    render(){
+class CenterBody extends Component{
 
-        // const results = this.state;
-        // console.log(results)
+    displayResults(){
+        return this.props.data;
+
+    }
+
+    render(){
+    console.log(this.props.data);
+    const listItems = this.props.data.map(d => <li key={d.id}><b>Album: </b>{d.album} - 
+                                                        <b>Artist: </b>{d.artist} - 
+                                                        <b>Genre: </b>{d.genre} - 
+                                                        <b>Release Date: </b>{d.releaseDate} - 
+                                                        <b>Title: </b>{d.title}
+                                                </li>);
 
     return(
         <div>
-            <Container fluid>
+            <Container fluid>   
                 <Row>
                     <Col>
-                        <ListGroup>
-                            <ListGroup.Item>
-                            {/* {results.map((track, index) => (
-                                <p key={track.id}>{track.artist}, {track.album}, {track.title}, {track.releaseDate}, {track.genre}</p>
-                             ))} */}
-                            </ListGroup.Item>
-                        </ListGroup>
+                            <ListGroup>
+                                <ListGroup.Item>
+                                    <p>{listItems}</p>
+                                </ListGroup.Item>
+                            </ListGroup>
                     </Col>
                 </Row>
             </Container>
