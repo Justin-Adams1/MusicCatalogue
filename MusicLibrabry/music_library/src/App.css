@@ -1,10 +1,8 @@
 .mainPage{  
   background-color: grey;
-  width:fit-content;
-  height:fit-content;
-  text-align: center;
   border-width: 1px;
-  height: 650px;
-  width: 100%;
+  height: auto;
+  width: auto;
   padding-top: 5px;
+  border-style:groove;
 }

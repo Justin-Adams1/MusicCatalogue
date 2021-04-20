@@ -23,7 +23,7 @@ class CenterBody extends Component{
             <Container fluid>   
                 <Row>
                     <Col>
-                            <ListGroup>
+                            <ListGroup className="table">
                                 <ListGroup.Item>
                                     <p>{listItems}</p>
                                 </ListGroup.Item>

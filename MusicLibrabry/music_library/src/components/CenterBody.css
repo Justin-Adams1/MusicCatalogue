@@ -1,8 +1,11 @@
 .centerBody{
-    width: fit-content;
+    width:fit-content;
     color: black;
     padding: 5px;
     border-radius:  35px;
     font-size: 12px;
     text-align: left;
+    border-style:groove;
+    background-color: black;
+    width:100%;
 }

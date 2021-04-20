@@ -5,39 +5,24 @@ import './RightBody.css';
 //import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 
 class RightBody extends Component{
+
+    getUserInput(variableName){
+        return prompt("Please enter the" + variableName + " to search by: ")
+    }
+
     render() {
+
         return(
         <div>
             <Container fluid>
                 <Row>
                     <Col>
-                        <h3 className="rightBody">Filter By:</h3>
-                        <h4>
-                            <Form action="/action_page.php" className="form">
-                                <label>
-                                    Album: 
-                                    <input type="text" name="searchCriteria" /><br/>
-                                </label>
-                                <label>
-                                    Artist: 
-                                    <input type="text" name="searchCriteria" /><br/>
-                                </label>
-                                <label>
-                                    Song Title:
-                                    <input type="text" name="searchCriteria"  /><br/>
-                                </label>
-                                <label>
-                                    Release Year:
-                                    <input type="text" name="searchCriteria"  /><br/><br/>
-                                </label>
-                                <input type="submit" value="Submit"></input>
-                                <input type="reset" value= "Reset"></input>
-                            </Form>
-                        </h4>
+                        <h3 className="rightHeader">Filter By: <br/>
+                            <input type="text" name="albumSearchCriteria" placeholder="Album" className="inputButton" onChange={this.props.textCapture}/><br/>
+                        </h3>
                     </Col>
                 </Row>
             </Container>

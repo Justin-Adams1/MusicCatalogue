@@ -1,10 +1,12 @@
-.rightBody {
+.rightHeader{
     background-color: black;
-    width: fit-content;
     color: white;
-    padding: 5px;
+    padding: 15px;
     border-radius:  35px;
+    border-style:groove;
+    width: 220px;
+    border-right: 5%;
 }
-.form{
-    text-align:left;
+.inputButton{
+    width: 180px;
 }

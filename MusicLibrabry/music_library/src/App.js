@@ -16,6 +16,7 @@ class App extends React.Component{
     super(props);
     this.state = {
       data: [],
+      textResult: ""
     };
   }
  
@@ -32,6 +33,21 @@ class App extends React.Component{
     }
   }
 
+  textCapture = (event)=> {
+    this.setState({
+      textResult: event.target.value
+    });
+    
+    console.log(this.state.textResult)
+  }
+
+  filterData(){
+    
+
+    
+  }
+
+
   componentDidMount(){
     this.apiCall()
   }
@@ -42,16 +58,16 @@ class App extends React.Component{
         <Container fluid>
           <Row>
             <Col>
-              <Header />
+              <Header data = {this.state.data}  />
             </Col>
           </Row>
           <br/>
           <Row>
-            <Col sm={8}>
-              <CenterBody data = {this.state.data} />
+            <Col sm={10}>
+              <CenterBody data = {this.state.data}/>
             </Col>
-            <Col sm={4}>
-              <RightBody />
+            <Col sm={2}>
+              <RightBody data = {this.state.data} textCapture = {this.textCapture}/>
             </Col>
           </Row>
         </Container>
