@@ -16,7 +16,8 @@ class App extends React.Component{
     super(props);
     this.state = {
       data: [],
-      textResult: ""
+      textResult: "",
+      field: ""
     };
   }
  
@@ -41,18 +42,22 @@ class App extends React.Component{
     console.log(this.state.textResult)
   }
 
-  filterData(){
-    
-
-    
-  }
+ 
 
 
   componentDidMount(){
     this.apiCall()
   }
 
+  filterData(){ // I can't figure out how to run this search by more than one key
+    const result = this.state.data.filter(search => {
+      return search.title.toLowerCase().includes(this.state.textResult.toLowerCase())
+    });
+    return result;
+  }
+
   render(){
+    const result = this.filterData();
     return (
       <div className="mainPage">
         <Container fluid>
@@ -64,7 +69,7 @@ class App extends React.Component{
           <br/>
           <Row>
             <Col sm={10}>
-              <CenterBody data = {this.state.data}/>
+              <CenterBody data = {result}/>
             </Col>
             <Col sm={2}>
               <RightBody data = {this.state.data} textCapture = {this.textCapture}/>
