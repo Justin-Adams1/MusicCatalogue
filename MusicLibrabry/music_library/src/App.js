@@ -16,8 +16,11 @@ class App extends React.Component{
     super(props);
     this.state = {
       data: [],
-      textResult: "",
-      field: ""
+      titleCapture: "",
+      artistCapture: "",
+      genreCapture: "",
+      albumCapture: "",
+      releaseYearCapture: ""
     };
   }
  
@@ -34,30 +37,88 @@ class App extends React.Component{
     }
   }
 
-  textCapture = (event)=> {
-    this.setState({
-      textResult: event.target.value
-    });
-    
-    console.log(this.state.textResult)
-  }
-
- 
-
-
   componentDidMount(){
     this.apiCall()
   }
 
-  filterData(){ // I can't figure out how to run this search by more than one key
-    const result = this.state.data.filter(search => {
-      return search.title.toLowerCase().includes(this.state.textResult.toLowerCase())
+  titleCapture = (event)=> {
+    this.setState({
+      titleCapture: event.target.value
+    });
+  }
+  albumCapture = (event)=> {
+    this.setState({
+      albumCapture: event.target.value
+    });
+  }
+  genreCapture = (event)=> {
+    this.setState({
+      genreCapture: event.target.value
+    });
+  }
+  artistCapture = (event)=> {
+    this.setState({
+      artistCapture: event.target.value
+    });
+  }
+  releaseYearCapture = (event)=> {
+    this.setState({
+      releaseYearCapture: event.target.value
+    });
+  }
+
+
+  filterTitle(){ // I can't figure out how to run this search by more than one key, so im going to have to do it individually. 
+                  // its not ideal, because its not that versatile.
+    let result = this.state.data.filter(search => {
+      return search.title.toLowerCase().includes(this.state.titleCapture.toLowerCase())
     });
     return result;
   }
+  filterAlbum(){
+    let result = this.state.data.filter(search => {
+    return search.album.toLowerCase().includes(this.state.albumCapture.toLowerCase())
+    });
+    return result;
+    }
+filterArtist(){
+    let result = this.state.data.filter(search => {
+    return search.artist.toLowerCase().includes(this.state.artistCapture.toLowerCase())
+    });
+    return result;
+    }
+filterGenre(){
+    let result = this.state.data.filter(search => {
+    return search.genre.toLowerCase().includes(this.state.genreCapture.toLowerCase())
+    });
+    return result;
+    }
+
+  checkFilter(){
+    let result =[];
+    if(this.state.titleCapture !== ""){
+      result = this.filterTitle();
+      return result;
+    }
+    if(this.state.albumCapture !== ""){
+      result = this.filterAlbum();
+      return result;
+    }
+    if(this.state.artistCapture !== ""){
+      result = this.filterArtist();
+      return result;
+    }
+    if(this.state.filterCapture !== ""){
+      result = this.filterGenre();
+      return result;
+    }
+  }
 
   render(){
-    const result = this.filterData();
+    let result = this.state.data;
+
+    result = this.checkFilter();
+    
     return (
       <div className="mainPage">
         <Container fluid>
@@ -72,7 +133,15 @@ class App extends React.Component{
               <CenterBody data = {result}/>
             </Col>
             <Col sm={2}>
-              <RightBody data = {this.state.data} textCapture = {this.textCapture}/>
+              <RightBody data = {this.state.data}   
+                          titleCapture = {this.titleCapture}
+                          artistCapture = {this.artistCapture}
+                          genreCapture = {this.genreCapture}
+                          albumCapture = {this.albumCapture}
+                          releaseYearCapture = {this.releaseYearCapture}
+              
+              
+              />
             </Col>
           </Row>
         </Container>
