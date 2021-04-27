@@ -8,11 +8,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 class RightBody extends Component{
-
-    getUserInput(variableName){
-        return prompt("Please enter the" + variableName + " to search by: ")
-    }
-
     render() {
 
         return(

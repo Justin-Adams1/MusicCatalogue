@@ -1,11 +1,25 @@
 .centerBody{
-    width:fit-content;
-    color: black;
+    background-color: black;
+    justify-content: left;
+    text-align: left;
+    width: 95%;
+    color: white;
     padding: 5px;
     border-radius:  35px;
-    font-size: 12px;
+    border-style: groove;
+}
+.headerColumn{
     text-align: left;
-    border-style:groove;
-    background-color: black;
-    width:100%;
+    justify-content: center;
+    width: 100px;
+}
+.headerColumnid{
+    text-align: center;
+    justify-content: center;
+    width: 20px;
+}
+.ColumnID{
+    text-align: center;
+    justify-content: center;
+    width: 20px;
 }

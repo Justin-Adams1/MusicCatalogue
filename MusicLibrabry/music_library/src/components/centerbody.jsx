@@ -11,23 +11,29 @@ import Container from 'react-bootstrap/Container';
 class CenterBody extends Component{
 
     render(){
-    const listItems = this.props.data.map(d => <li key={d.id}>  <b>Album: </b>{d.album} - 
-                                                                <b>Artist: </b>{d.artist} - 
-                                                                <b>Genre: </b>{d.genre} - 
-                                                                <b>Release Date: </b>{d.releaseDate} - 
-                                                                <b>Title: </b>{d.title}
-                                                </li>);
+    const listItems = this.props.data.map(d => <Row>
+                                                    <Col  sm={1} className ="ColumnID">{d.id}</Col>
+                                                    <Col  sm={2}>{d.artist}</Col>
+                                                    <Col  sm={2}>{d.album}</Col>
+                                                    <Col  sm={3}>{d.title}</Col>
+                                                    <Col  sm={2} className ="ColumnID">{d.releaseDate}</Col>
+                                                    <Col  sm={2}>{d.genre}</Col>
+                                                </Row>);
 
     return(
-        <div className="centerBody">
-            <Container fluid>   
+        <div>
+            <Container fluid className ="centerBody">   
+                <Row>
+                    <Col sm={1} className ="headerColumnid"><h3>ID</h3></Col>
+                    <Col sm={2} className ="headerColumn"><h3>Artist</h3></Col>
+                    <Col sm={2} className ="headerColumn"><h3>Album</h3></Col>
+                    <Col sm={3} className ="headerColumn"><h3>Title</h3></Col>
+                    <Col sm={2} className ="headerColumn"><h3>Release Date</h3></Col>
+                    <Col sm={2} className ="headerColumn"><h3>Genre</h3></Col>
+                </Row>
                 <Row>
                     <Col>
-                            <ListGroup className="table">
-                                <ListGroup.Item>
-                                    <p>{listItems}</p>
-                                </ListGroup.Item>
-                            </ListGroup>
+                        <p>{listItems}</p>
                     </Col>
                 </Row>
             </Container>

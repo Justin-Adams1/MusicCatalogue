@@ -26,7 +26,7 @@ class App extends React.Component{
  
   async apiCall(){
     try{
-      const result = await axios.get("http://www.devcodecampmusiclibrary.com/api/music/");
+      const result = await axios.get("http://localhost:3000/api/songs");
       const data = result.data;
       
       this.setState({data});
@@ -124,7 +124,7 @@ filterGenre(){
         <Container fluid>
           <Row>
             <Col>
-              <Header data = {this.state.data}  />
+              <Header data = {result}  />
             </Col>
           </Row>
           <br/>
